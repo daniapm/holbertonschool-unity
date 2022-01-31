@@ -6,11 +6,16 @@ public class CameraController : MonoBehaviour
 {
     public GameObject player;
     Vector3 offset;
+
+    public float speedH;
+    public float speedV;
+
+    float mouseX;
+    float mouseY;
     // Start is called before the first frame update
     void Start()
     {
         // Initial position of Camera controller
-        transform.position = new Vector3(22, 26, 7);
         // Calculate and store the offset value by getting the distance
         // between the player's position and camera's position.
         offset = transform.position - player.transform.position;
@@ -23,6 +28,11 @@ public class CameraController : MonoBehaviour
     {
         // Fixed the Camera position
         transform.position = player.transform.position + offset ;
-        
+        mouseX += speedH * Input.GetAxis("Mouse X");
+        mouseY += speedV * Input.GetAxis("Mouse Y");
+
+        transform.eulerAngles = new Vector3(mouseY, mouseX, 0.0f);
+
+
     }
 }
