@@ -1,4 +1,4 @@
-<a href= "url"><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-cs-unity/435/0.gif" width="550px"></a>
+<a href= "url"><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-cs-unity/435/0.gif" width="900px"></a>
 
 # 0x05. Unity - Assets: Models, Textures
 
