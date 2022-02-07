@@ -1,38 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //Load Scenes
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject player;
-    Vector3 offset;
 
-    public float speedH;
-    public float speedV;
+    private Vector3 offset;
+    private float speed = 10.0f;
 
-    float mouseX;
-    float mouseY;
-    // Start is called before the first frame update
-    void Start()
+    public Transform trackerPlayer;
+
+    private void Start()
     {
-        // Initial position of Camera controller
-        // Calculate and store the offset value by getting the distance
-        // between the player's position and camera's position.
-        offset = transform.position - player.transform.position;
-        // offset(x,y,z) stored => -1, 24.8, -9
+        offset = transform.position - trackerPlayer.transform.position;
         
+        transform.rotation = Quaternion.Euler(0, trackerPlayer.transform.rotation.x, 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        // Fixed the Camera position
-        transform.position = player.transform.position + offset ;
-        mouseX += speedH * Input.GetAxis("Mouse X");
-        mouseY += speedV * Input.GetAxis("Mouse Y");
-
-        transform.eulerAngles = new Vector3(mouseY, mouseX, 0.0f);
-
-
+        if (Input.GetAxis("Mouse X") != 0)
+        {
+            offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * speed, Vector3.up) * offset;
+        }
+        
+        transform.position = trackerPlayer.position + offset;
+        
+        transform.LookAt(trackerPlayer.position);
     }
 }
