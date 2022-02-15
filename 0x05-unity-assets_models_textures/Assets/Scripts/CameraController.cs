@@ -1,32 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //Load Scenes
 
 public class CameraController : MonoBehaviour
 {
-
+    private Transform t;
     private Vector3 offset;
-    private float speed = 10.0f;
 
-    public Transform trackerPlayer;
+    public GameObject player;
+    public float turnSpeed = 5.0f;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        offset = transform.position - trackerPlayer.transform.position;
-        
-        transform.rotation = Quaternion.Euler(0, trackerPlayer.transform.rotation.x, 0);
+        t = GetComponent<Transform>();
+        offset = t.position - player.transform.position;
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.GetAxis("Mouse X") != 0)
-        {
-            offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * speed, Vector3.up) * offset;
-        }
-        
-        transform.position = trackerPlayer.position + offset;
-        
-        transform.LookAt(trackerPlayer.position);
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed, Vector3.left) * offset;
+        t.position = player.transform.position + offset;
+        transform.LookAt(player.transform.position);
     }
 }

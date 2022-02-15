@@ -5,26 +5,13 @@ using UnityEngine.UI;
 
 public class WinTrigger : MonoBehaviour
 {
-    public UnityEngine.UI.Text text;
+    public Text timerText;
+    public GameObject player;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.name == "WinFlag")
-        {
-            text.GetComponent<Text>().color = Color.green;
-            text.GetComponent<Text>().fontSize = 60;
-        }
+        player.GetComponent<Timer>().enabled = false;
+        timerText.fontSize = 60;
+        timerText.color = Color.green;
     }
 }
