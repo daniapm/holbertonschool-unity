@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Transform t;
+    private Transform transf;
     private Vector3 offset;
-
+    public bool isInverted = false;
+    private int inverted;
     public GameObject player;
-    public float turnSpeed = 5.0f;
+    public float speed = 5.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        t = GetComponent<Transform>();
-        offset = t.position - player.transform.position;
+        if (InvertedYMode)
+            isInverted = true;
+        transf = GetComponent<Transform>();
+        offset = transf.position - player.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed, Vector3.left) * offset;
-        t.position = player.transform.position + offset;
+        if (isInverted)
+        {
+            inverted = -1;
+        }
+        else {
+            inverted = 1;
+        }
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * speed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * speed, Vector3.left) * offset;
+        transf.position = player.transform.position + offset;
         transform.LookAt(player.transform.position);
     }
 }
