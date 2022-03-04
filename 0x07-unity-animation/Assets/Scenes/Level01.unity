@@ -11458,7 +11458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453187430906166734, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 453187430906166734, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11492,9 +11492,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2190137806746062312, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190137806746062312, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190137806746062312, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2898938957374930147, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982368556929129277, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e7c32dedcebbb7740b0f3558213d2f50, type: 2}
+    - target: {fileID: 5099518257925252235, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d06ffa331492044998285d59ae251ef, type: 2}
+    - target: {fileID: 5225515252761581458, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5696625898730855460, guid: 07545f261f53f2945af2d8dd05d57ab6, type: 3}
       propertyPath: winn
