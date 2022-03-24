@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Animator animation;
     public Canvas pause;
     private Transform ty_anim;
+    private string surface;
     
     
     void Awake()
@@ -25,6 +26,15 @@ public class PlayerController : MonoBehaviour
         player2 = GetComponent<Transform>();
         ty_anim = player2.Find("ty");
         animation = ty_anim.GetComponent<Animator>();
+    }
+
+    void OnCollinsionStay(Collision other) {
+        if (other.collider.tag == "Stone") {
+            surface = "Stone";
+        }
+        else {
+            surface = "Grass";
+        }
     }
     
     void Update()
@@ -82,5 +92,15 @@ public class PlayerController : MonoBehaviour
         {
             pause.GetComponent<PauseMenu>().Pause();
         }
+    }
+
+    public bool onGround()
+    {
+        return pc.isGrounded;
+    }
+
+    public string surfaceType()
+    {
+        return surface;
     }
 }
