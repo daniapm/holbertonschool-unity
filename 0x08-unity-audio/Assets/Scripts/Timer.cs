@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
     public GameObject camera;
     public Text winn;
     public Canvas canvasWin;
+    public AudioSource chery;
+    public AudioSource piano;
 
 
     public UnityEngine.UI.Text TimerText;
@@ -32,6 +34,8 @@ public class Timer : MonoBehaviour
         winn.text = TimerText.text;
         TimerText.enabled = false;
         canvasWin.gameObject.SetActive(true);
+        chery.Stop();
+        piano.Play();
 
     }
 }
