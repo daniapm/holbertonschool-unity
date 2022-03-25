@@ -199,7 +199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4380561691463212296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4380561691629233895
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +407,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4380561691981556469}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &4380561692098402055
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +774,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4380561692231759310}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &4380561692683797534
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +878,7 @@ GameObject:
   - component: {fileID: 4380561692048834038}
   - component: {fileID: 4380561692048834037}
   - component: {fileID: 4380561692048834036}
+  - component: {fileID: 8820389734924301845}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -935,6 +972,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8820389734924301845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5637738212890909486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ca398eeb73dfa42b7367cf18fe2d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  master: {fileID: 24100000, guid: ae1ba7619d74bd447b858ad2428a1850, type: 2}
+  unpaused: {fileID: 24500006, guid: ae1ba7619d74bd447b858ad2428a1850, type: 2}
+  paused: {fileID: -1484719270388840305, guid: ae1ba7619d74bd447b858ad2428a1850, type: 2}
+  PauseCanvas: {fileID: 5637738212890909486}
+  Paused: 0
+  camera: {fileID: 0}
 --- !u!1001 &1240245656390612816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1025,6 +1080,14 @@ PrefabInstance:
     - target: {fileID: 6685368447612673100, guid: 7122c2809e3f8484b9604df686af8ee3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685368447612673103, guid: 7122c2809e3f8484b9604df686af8ee3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685368447612673103, guid: 7122c2809e3f8484b9604df686af8ee3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8199493133155050734, guid: 7122c2809e3f8484b9604df686af8ee3, type: 3}
       propertyPath: m_Name
